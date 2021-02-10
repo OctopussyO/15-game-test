@@ -1,5 +1,5 @@
 {
-  "name": "test-nuxt",
+  "name": "test-puzzle-game",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -15,8 +15,11 @@
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
     "husky": "^5.0.9",
-    "prettier": "^2.2.1"
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1",
+    "sass-loader": "10.1.1"
   },
   "husky": {
     "hooks": {

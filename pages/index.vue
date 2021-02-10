@@ -1,27 +1,6 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">test-nuxt</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="page__container">
+    <Puzzle />
   </div>
 </template>
 
@@ -35,14 +14,16 @@ export default {
 };
 </script>
 
-<style>
-.container {
+<style lang="scss">
+.page__container {
+  padding: 16px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: $light-gray;
 }
 
 .title {
