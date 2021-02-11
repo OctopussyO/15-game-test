@@ -5,7 +5,7 @@
       <template v-slot:steps>{{ steps }}</template>
       <template v-slot:time>{{ formatedTime }}</template>
     </Header>
-    <Puzzle />
+    <Puzzle :isNewGame="isNewGame" @started-game="startedGame" />
   </div>
 </template>
 
@@ -19,6 +19,8 @@
         maxTime: 900,
         counter: false,
         interval: null,
+        // Для начала новой игры
+        isNewGame: false,
       }
     },
 
@@ -28,11 +30,11 @@
         const min = (this.currentTime - sec) / 60;
         const checkFormat = (val) => val > 9 ? val : `0${val}`;
         return `${checkFormat(min)}:${checkFormat(sec)}`;
-      }
+      },
     },
 
     methods: {
-      startGame: function () {
+      startTimer: function () {
         clearInterval(this.interval);
         this.counter = false;
         this.interval = setInterval(this.tick, 1000);
@@ -48,8 +50,18 @@
           clearInterval(this.interval);
           this.counter = false;
         }
-      }
-    }
+      },
+
+      startGame: function () {
+        this.isNewGame = true;
+        this.startTimer();
+      },
+
+      startedGame: function () {
+        this.isNewGame = false;
+      },
+
+    },
   }
 </script>
 
@@ -78,7 +90,7 @@
     color: $light-text;
     font-size: 20px;
     font-weight: 500;
-    transition: .2s linear;
+    transition: $transition;
   }
 
   .button:focus {
@@ -87,6 +99,7 @@
 
   .button:hover {
     box-shadow: 0 0 5px #00000075;
+    cursor: pointer;
   }
 
   .button:active {

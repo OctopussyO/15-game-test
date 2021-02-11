@@ -1,5 +1,5 @@
 <template>
-  <li class="puzzle__item-wrapper">
+  <li :class="['puzzle__item-wrapper', this.item === '' ? 'puzzle__item-wrapper_hidden' : '']">
     <p class="puzzle__item">
       {{ item }}
     </p>
@@ -19,8 +19,12 @@
     padding-bottom: 100%;
     background-color: $light-purple;
     border-radius: $border-radius;
-    transition: box-shadow .2s linear;
+    transition: box-shadow $transition;
     cursor: pointer;
+  }
+
+  .puzzle__item-wrapper_hidden {
+    visibility: hidden;
   }
 
   .puzzle__item-wrapper:hover {
