@@ -1,9 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "test-nuxt",
+    title: "15",
     htmlAttrs: {
-      lang: "en",
+      lang: "ru",
     },
     meta: [
       { charset: "utf-8" },

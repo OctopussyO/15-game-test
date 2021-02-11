@@ -1,11 +1,13 @@
 <template>
   <div class="page__container">
-    <Puzzle />
+    <Widget />
   </div>
 </template>
 
 <script>
+import Widget from '~/components/Widget.vue';
 export default {
+  components: { Widget },
   methods: {
     test() {
       console.log("test");
