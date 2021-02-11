@@ -40,7 +40,6 @@ import Notification from './Notification.vue';
         // Для начала новой игры (trigger)
         isNewGame: false,
         // Для уведомлений
-        // TODO -- поменять на false
         isGameStarted: false,
         isDone: false,
         isTimeOver: false,
@@ -65,9 +64,13 @@ import Notification from './Notification.vue';
         return `${checkFormat(min)}:${checkFormat(sec)}`;
       },
 
-      startTimer: function () {
+      resetTimer: function () {
         clearInterval(this.interval);
         this.counter = false;
+      },
+
+      startTimer: function () {
+        this.resetTimer();
         this.interval = setInterval(this.tick, 1000);
       },
 
@@ -79,8 +82,7 @@ import Notification from './Notification.vue';
         } else if (this.currentTime > 0) {
           this.currentTime --;
         } else {
-          clearInterval(this.interval);
-          this.counter = false;
+          this.resetTimer();
           this.isTimeOver = true;
         }
       },
@@ -100,6 +102,7 @@ import Notification from './Notification.vue';
       handleWin: function () {
         this.isGameStarted = false;
         this.isDone = true;
+        this.resetTimer();
       }
 
     },

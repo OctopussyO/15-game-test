@@ -37,9 +37,8 @@
           this.items = this.shuffleArray(this.items).slice();
           // Если комбинация нерешаема, делаем её решаемой
           while (!this.isSolvable(this.items)) {
-              this.swap(0,1);
+            this.swap(0,1);
           }
-
           this.$emit('started-game');
         }
       },
