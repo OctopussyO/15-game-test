@@ -33,9 +33,13 @@
 
     watch: {
       isNewGame: function () {
-        console.log(this.isNewGame)
         if (this.isNewGame) {
           this.items = this.shuffleArray(this.items).slice();
+          // Если комбинация нерешаема, делаем её решаемой
+          while (!this.isSolvable(this.items)) {
+              this.swap(0,1);
+          }
+          
           this.$emit('started-game');
         }
       },
@@ -45,14 +49,29 @@
       // Перемешивание массива
       shuffleArray: function (arr) {
         let j, temp;
-          for (let i = arr.length - 1; i > 0; i--) {
-            j = Math.floor(Math.random() * (i + 1));
-            temp = arr[j];
-            arr[j] = arr[i];
-            arr[i] = temp;
-          }
-          this.holeIndex = arr.indexOf('');
+        for (let i = arr.length - 1; i > 0; i--) {
+          j = Math.floor(Math.random() * (i + 1));
+          temp = arr[j];
+          arr[j] = arr[i];
+          arr[i] = temp;
+        }
+        this.holeIndex = arr.indexOf('');
+
         return arr;
+      },
+
+      // Проверка на решаемость (см. Википедию)
+      isSolvable: function (arr) {
+        let k = 0;
+
+        for (let i = 1; i < arr.length-1; i++) {
+          for (let j = i-1; j >= 0; j--) {
+            if (arr[j] > arr[i]) {
+              k++;
+            }
+          }
+        }
+        return !(k % 2);
       },
 
       // Перемещение ячеек
