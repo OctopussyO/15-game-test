@@ -1,5 +1,5 @@
 <template>
-  <ul class="puzzle__list">
+  <transition-group name="cell" tag="ul" class="puzzle__list">
     <li class="puzzle__list-item" v-for="(item, index) in items" :key="item">
       <PuzzleItem
         v-bind:item="item"
@@ -9,7 +9,7 @@
         :lastClickedIndex="lastClickedIndex"
       />
     </li>
-  </ul>
+  </transition-group>
 </template>
 
 <script>
@@ -143,6 +143,10 @@
     position: relative;
     width: 100%;
     padding-bottom: 100%;
+  }
+
+  .cell-move {
+    transition: transform .2s;
   }
 
   @media screen and (max-width: 600px) {
