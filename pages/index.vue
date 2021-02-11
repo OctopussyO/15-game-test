@@ -8,11 +8,6 @@
 import Widget from '~/components/Widget.vue';
 export default {
   components: { Widget },
-  methods: {
-    test() {
-      console.log("test");
-    },
-  },
 };
 </script>
 

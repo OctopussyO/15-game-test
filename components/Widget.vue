@@ -1,16 +1,35 @@
 <template>
   <div class="container">
-    <button class="button" @click="startGame">Новая игра</button>
+    <button class="start-button" @click="startGame">Новая игра</button>
     <Header>
       <template v-slot:steps>{{ steps }}</template>
-      <template v-slot:time>{{ formatedTime }}</template>
+      <template v-slot:time>{{ timeLeft }}</template>
     </Header>
-    <Puzzle :isNewGame="isNewGame" @started-game="startedGame" />
+    <div class="game-container">
+      <Puzzle
+        :isNewGame="isNewGame"
+        @started-game="startedGame"
+        @make-move="steps++"
+        @win="handleWin"
+      />
+      <transition name="fade">
+        <Notification
+          v-show="!isGameStarted || isTimeOver || isDone"
+          :isDone="isDone"
+          :isTimeOver="isTimeOver"
+          :isGameStarted="isGameStarted"
+          :gameTime="gameTime"
+        />
+      </transition>
+    </div>
   </div>
 </template>
 
 <script>
+// v-show="isGameStarted & !isTimeOver"
+import Notification from './Notification.vue';
   export default {
+  components: { Notification },
     data() {
       return {
         steps: 0,
@@ -19,21 +38,34 @@
         maxTime: 900,
         counter: false,
         interval: null,
-        // Для начала новой игры
+        // Для начала новой игры (trigger)
         isNewGame: false,
+        // Для уведомлений
+        // TODO -- поменять на false
+        isGameStarted: false,
+        isDone: false,
+        isTimeOver: false,
       }
     },
 
     computed: {
-      formatedTime: function () {
-        const sec = this.currentTime % 60;
-        const min = (this.currentTime - sec) / 60;
-        const checkFormat = (val) => val > 9 ? val : `0${val}`;
-        return `${checkFormat(min)}:${checkFormat(sec)}`;
+      timeLeft: function () {
+        return this.formatTime(this.currentTime);
       },
+
+      gameTime: function () {
+        return this.formatTime(this.maxTime - this.currentTime);
+      }
     },
 
     methods: {
+      formatTime: function (time) {
+        const sec = time % 60;
+        const min = (time - sec) / 60;
+        const checkFormat = (val) => val > 9 ? val : `0${val}`;
+        return `${checkFormat(min)}:${checkFormat(sec)}`;
+      },
+
       startTimer: function () {
         clearInterval(this.interval);
         this.counter = false;
@@ -44,22 +76,32 @@
         if (this.counter === false) {
           this.currentTime = this.maxTime;
           this.counter = true;
+          this.isTimeOver = false;
         } else if (this.currentTime > 0) {
           this.currentTime --;
         } else {
           clearInterval(this.interval);
           this.counter = false;
+          this.isTimeOver = true;
         }
       },
 
       startGame: function () {
         this.isNewGame = true;
+        this.isGameStarted = true;
         this.startTimer();
+        this.steps = 0;
+        this.isDone = false;
       },
 
       startedGame: function () {
         this.isNewGame = false;
       },
+
+      handleWin: function () {
+        this.isGameStarted = false;
+        this.isDone = true;
+      }
 
     },
   }
@@ -80,7 +122,7 @@
     border-radius: $border-radius;
   }
 
-  .button {
+  .start-button {
     padding: 10px 15px;
     margin-left: auto;
     margin-right: 20px;
@@ -93,17 +135,29 @@
     transition: $transition;
   }
 
-  .button:focus {
+  .start-button:focus {
     outline: none;
   }
 
-  .button:hover {
+  .start-button:hover {
     box-shadow: 0 0 5px #00000075;
     cursor: pointer;
   }
 
-  .button:active {
+  .start-button:active {
     box-shadow: none;
+  }
+
+  .game-container {
+    position: relative;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+  }
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 
 </style>
