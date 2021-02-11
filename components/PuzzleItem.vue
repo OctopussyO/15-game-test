@@ -71,5 +71,15 @@
     opacity: 0;
   }
 
+  @media screen and (max-width: 600px) {
+    .puzzle__item {
+      font-size: 24px;
+    }
+    
+    .puzzle__notice {
+      font-size: 1.5em;
+    }
+  }
+
 
 </style>

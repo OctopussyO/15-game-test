@@ -39,7 +39,7 @@
           while (!this.isSolvable(this.items)) {
               this.swap(0,1);
           }
-          
+
           this.$emit('started-game');
         }
       },
@@ -133,7 +133,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: $puzzle-gap;
-    padding: 15px;
+    padding: 1.5 * $puzzle-gap;
     background-color: $dark-purple;
     border-radius: $border-radius;
     overflow: hidden;
@@ -143,6 +143,13 @@
     position: relative;
     width: 100%;
     padding-bottom: 100%;
+  }
+
+  @media screen and (max-width: 600px) {
+    .puzzle__list {
+      gap: $puzzle-gap_sm;
+      padding: 1.5 * $puzzle-gap_sm;
+    }
   }
 
 </style>

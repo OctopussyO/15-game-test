@@ -26,7 +26,6 @@
 </template>
 
 <script>
-// v-show="isGameStarted & !isTimeOver"
 import Notification from './Notification.vue';
   export default {
   components: { Notification },
@@ -113,9 +112,9 @@ import Notification from './Notification.vue';
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
     min-height: 300px;
-    padding: 30px 20px 20px;
+    padding: 20px;
     box-sizing: border-box;
     background-color: $light-purple;
     box-shadow: 0 0 25px 15px $gray;
@@ -158,6 +157,17 @@ import Notification from './Notification.vue';
 
   .fade-enter, .fade-leave-to {
     opacity: 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+
+    .start-button {
+      margin-right: 10px;
+      font-size: 16px;
+    }
   }
 
 </style>

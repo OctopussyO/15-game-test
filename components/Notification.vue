@@ -31,6 +31,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 5px;
     background-color: #ffffff90;
     border-radius: $border-radius;
     overflow: hidden;
@@ -48,6 +49,12 @@
     color: $neutral-text;
     font-size: 36px;
     font-weight: 500;
+  }
+
+  @media screen and (max-width: 600px) {
+    .notice__text {
+      font-size: 24px;
+    }
   }
 
 </style>

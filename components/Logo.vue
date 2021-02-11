@@ -13,5 +13,11 @@
     line-height: 1;
     font-weight: 700;
   }
-  
+
+  @media screen and (max-width: 600px) {
+    .logo {
+      font-size: 56px;
+    }
+  }
+
 </style>

@@ -52,4 +52,23 @@
     margin-left: 0;
   }
 
+  @media screen and (max-width: 600px) {
+    .header {
+      padding: 10px;
+    }
+
+    .header__info {
+      min-width: 70px;
+      min-height: 55px;
+    }
+
+    .header__title {
+      font-size: 14px;
+    }
+
+    .header__text {
+      font-size: 16px;
+    }
+  }
+
 </style>
