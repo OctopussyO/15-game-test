@@ -1,20 +1,10 @@
-$white: #fff;
-$white-bg: #ffffff40;
-$white-bg-accent:#ffffff60;
-$dark-purple-tr: #5b496b70;
-$caution-tr: #da1c7470;
-$dark-text: #2c173b90;
-$light-text: #f5eefc;
-$caution-text: #da1c74;
-$neutral-text: #6c4e83;
-
 $border-radius: 10px;
 $puzzle-gap: 10px;
 $puzzle-gap_sm: 5px;
 
 $white-border: 1px solid $white-bg-accent;
 
-$transition: .2s linear;
+$transition: 0.2s linear;
 
 @mixin bg-blur {
   backdrop-filter: blur(50px);

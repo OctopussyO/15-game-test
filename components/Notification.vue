@@ -18,44 +18,42 @@
 </template>
 
 <script>
-  export default {
-    props: ['isGameStarted', 'isDone', 'isTimeOver', 'gameTime'],
-  }
+export default {
+  props: ["isGameStarted", "isDone", "isTimeOver", "gameTime"],
+};
 </script>
 
 <style lang="scss" scoped>
+.notice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  background-color: $white-bg;
+  @include notice-blur;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
 
-  .notice {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
-    background-color: $white-bg;
-    @include notice-blur;
-    border-radius: $border-radius;
-    overflow: hidden;
-  }
+.notice__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 
-  .notice__text-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
+.notice__text {
+  color: $neutral-text;
+  font-size: 36px;
+  font-weight: 500;
+}
 
+@include query($s) {
   .notice__text {
-    color: $neutral-text;
-    font-size: 36px;
-    font-weight: 500;
+    font-size: 24px;
   }
-
-  @media screen and (max-width: 600px) {
-    .notice__text {
-      font-size: 24px;
-    }
-  }
-
+}
 </style>
