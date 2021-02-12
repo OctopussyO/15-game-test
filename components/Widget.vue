@@ -119,8 +119,9 @@ import Notification from './Notification.vue';
     min-height: 300px;
     padding: 20px;
     box-sizing: border-box;
-    background-color: $light-purple;
-    box-shadow: 0 0 25px 15px $gray;
+    background-color: $white-bg;
+    @include bg-blur;
+    border: $white-border;
     border-radius: $border-radius;
     user-select: none;
   }
@@ -129,10 +130,10 @@ import Notification from './Notification.vue';
     padding: 10px 15px;
     margin-left: auto;
     margin-right: 20px;
-    background-color: $dark-purple;
-    border: none;
+    background-color:  $white-bg-accent;
+    border: $white-border;
     border-radius: $border-radius;
-    color: $light-text;
+    color: $neutral-text;
     font-size: 20px;
     font-weight: 500;
     transition: $transition;
@@ -143,7 +144,7 @@ import Notification from './Notification.vue';
   }
 
   .start-button:hover {
-    box-shadow: 0 0 5px #00000075;
+    box-shadow: 0 0 10px $dark-purple-tr;
     cursor: pointer;
   }
 

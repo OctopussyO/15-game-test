@@ -25,10 +25,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $light-purple;
+    background-color: $white-bg-accent;
+    @include bg-blur;
     border-radius: $border-radius;
     border: none;
-    color: $dark-text;
+    color: $neutral-text;
     font-size: 32px;
     font-weight: 500;
     transition: box-shadow $transition;
@@ -40,7 +41,7 @@
   }
 
   .puzzle__item:hover {
-    box-shadow: 0 0 $puzzle-gap #00000075;
+    box-shadow: 0 0 ($puzzle-gap / 2) $dark-purple-tr;
   }
 
   .puzzle__item:focus {
@@ -75,7 +76,7 @@
     .puzzle__item {
       font-size: 24px;
     }
-    
+
     .puzzle__notice {
       font-size: 1.5em;
     }

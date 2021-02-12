@@ -32,7 +32,8 @@
     width: 100%;
     height: 100%;
     padding: 5px;
-    background-color: #ffffff90;
+    background-color: $white-bg;
+    @include notice-blur;
     border-radius: $border-radius;
     overflow: hidden;
   }

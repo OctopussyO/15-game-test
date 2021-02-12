@@ -34,9 +34,9 @@
     padding: 10px 5px;
     margin-left: 10px;
     box-sizing: border-box;
-    background-color: $dark-purple;
+    background-color: $white-bg-accent;
     border-radius: $border-radius;
-    color: $light-text;
+    color: $neutral-text;
   }
 
   .header__title {

@@ -78,7 +78,7 @@
             }
           }
         }
-        
+
         return !((k + holeRow) % 2);
       },
 
@@ -142,7 +142,7 @@
     grid-template-rows: repeat(4, 1fr);
     gap: $puzzle-gap;
     padding: 1.5 * $puzzle-gap;
-    background-color: $dark-purple;
+    background-color: $white-bg;
     border-radius: $border-radius;
     overflow: hidden;
   }
