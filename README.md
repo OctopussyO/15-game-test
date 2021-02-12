@@ -4,8 +4,9 @@
 
 Ознакомиться с приложением можно по [ссылке](https://15-game-test.netlify.app/ 'Ссылка')
 
-
-![Иллюстрация к проекту](https://sun9-26.userapi.com/impg/XMFyp-eLIjZjr0vSU-QkbV7-8e69kDUwQ8GL9A/UOdWTdOwXyY.jpg?size=909x756&quality=96&proxy=1&sign=66cad808eb65b9a8138305e49c6b89cf&type=album)
+<div align="center">
+  <img align="center" height="500px" src="https://sun9-26.userapi.com/impg/XMFyp-eLIjZjr0vSU-QkbV7-8e69kDUwQ8GL9A/UOdWTdOwXyY.jpg?size=909x756&quality=96&proxy=1&sign=66cad808eb65b9a8138305e49c6b89cf&type=album" alt="Иллюстрация к проекту">
+</div>
 
 ### Функциональность
 
