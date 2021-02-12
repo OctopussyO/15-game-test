@@ -1,6 +1,6 @@
 $white: #fff;
 $white-bg: #ffffff40;
-$white-bg-accent:#ffffff60;
+$white-bg-accent: #ffffff60;
 $dark-purple-tr: #5b496b70;
 $caution-tr: #da1c7470;
 $dark-text: #2c173b90;
@@ -14,7 +14,7 @@ $puzzle-gap_sm: 5px;
 
 $white-border: 1px solid $white-bg-accent;
 
-$transition: .2s linear;
+$transition: 0.2s linear;
 
 @mixin bg-blur {
   backdrop-filter: blur(50px);
@@ -25,11 +25,10 @@ $transition: .2s linear;
 }
 
 // Медиазапросы
-$s: '(max-width: 600px)';
+$s: "(max-width: 600px)";
 
 @mixin query($media) {
   @media screen and #{$media} {
     @content;
   }
 }
-
