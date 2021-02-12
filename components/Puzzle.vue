@@ -36,8 +36,10 @@
         if (this.isNewGame) {
           this.items = this.shuffleArray(this.items).slice();
           // Если комбинация нерешаема, делаем её решаемой
-          while (!this.isSolvable(this.items)) {
-            this.swap(0,1);
+          while (!this.isSolvable(this.items, this.holeIndex)) {
+            this.swap(0, 1);
+            // На случай, если индекс пустой клетки был 0 или 1
+            this.serchHole(this.items);
           }
           this.$emit('started-game');
         }
@@ -45,6 +47,11 @@
     },
 
     methods: {
+      // Поиск индекса пустой клетки
+      serchHole: function (arr) {
+        this.holeIndex = arr.indexOf('');
+      },
+
       // Перемешивание массива
       shuffleArray: function (arr) {
         let j, temp;
@@ -54,13 +61,14 @@
           arr[j] = arr[i];
           arr[i] = temp;
         }
-        this.holeIndex = arr.indexOf('');
+        this.serchHole(arr);
 
         return arr;
       },
 
       // Проверка на решаемость (см. Википедию)
-      isSolvable: function (arr) {
+      isSolvable: function (arr, holeIndex) {
+        const holeRow = Math.ceil((holeIndex + 1) / 4);
         let k = 0;
 
         for (let i = 1; i < arr.length-1; i++) {
@@ -70,7 +78,8 @@
             }
           }
         }
-        return !(k % 2);
+        
+        return !((k + holeRow) % 2);
       },
 
       // Перемещение ячеек

@@ -122,6 +122,7 @@ import Notification from './Notification.vue';
     background-color: $light-purple;
     box-shadow: 0 0 25px 15px $gray;
     border-radius: $border-radius;
+    user-select: none;
   }
 
   .start-button {
