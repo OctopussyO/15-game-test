@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="['puzzle__item', this.item === '' ? 'puzzle__item_hidden' : '']"
+    :class="['puzzle__item', this.item === 0 ? 'puzzle__item_hidden' : '']"
     @click="$emit('click-item', index)"
   >
     {{ item }}
