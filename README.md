@@ -1,12 +1,9 @@
 # Пятнашки
+<img align="right" height="500px" src="https://psv4.userapi.com/c536236/u1190603/docs/d26/8539367584f3/15.png?extra=6AOFknrflZ4_oMbfHalGCxjiDBk9CMEFbQJimLnv8gSrMNC_-74Rlzx7t3RocIe4G44r6ilSD273v9hZTnyDVUALk1HG3sYRAo1MSE_IEGogkATNLa8HLlZGfjAVVca-jPbsScp3GJtlSvC2vFM" alt="Иллюстрация к проекту">
 
 **Цель игры** — перемещая костяшки по коробке, добиться упорядочивания их по номерам, желательно сделав как можно меньше перемещений.
 
 Ознакомиться с приложением можно по [ссылке](https://15-game-test.netlify.app/ 'Ссылка')
-
-<div align="center">
-  <img align="center" height="500px" src="https://sun9-26.userapi.com/impg/XMFyp-eLIjZjr0vSU-QkbV7-8e69kDUwQ8GL9A/UOdWTdOwXyY.jpg?size=909x756&quality=96&proxy=1&sign=66cad808eb65b9a8138305e49c6b89cf&type=album" alt="Иллюстрация к проекту">
-</div>
 
 ### Функциональность
 
