@@ -52,7 +52,7 @@
     margin-left: 0;
   }
 
-  @media screen and (max-width: 600px) {
+  @include query($s) {
     .header {
       padding: 10px;
     }

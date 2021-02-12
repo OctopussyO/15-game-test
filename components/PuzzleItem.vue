@@ -72,7 +72,7 @@
     opacity: 0;
   }
 
-  @media screen and (max-width: 600px) {
+  @include query($s) {
     .puzzle__item {
       font-size: 24px;
     }

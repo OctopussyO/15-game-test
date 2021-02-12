@@ -176,7 +176,7 @@ import Notification from './Notification.vue';
     opacity: 0;
   }
 
-  @media screen and (max-width: 600px) {
+  @include query($s) {
     .container {
       padding: 10px;
     }

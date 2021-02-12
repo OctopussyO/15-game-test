@@ -52,7 +52,7 @@
     font-weight: 500;
   }
 
-  @media screen and (max-width: 600px) {
+  @include query($s) {
     .notice__text {
       font-size: 24px;
     }

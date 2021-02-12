@@ -15,7 +15,7 @@
     letter-spacing: -5px;
   }
 
-  @media screen and (max-width: 600px) {
+  @include query($s) {
     .logo {
       font-size: 56px;
     }

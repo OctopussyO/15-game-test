@@ -23,3 +23,13 @@ $transition: .2s linear;
 @mixin notice-blur {
   backdrop-filter: blur(5px);
 }
+
+// Медиазапросы
+$s: '(max-width: 600px)';
+
+@mixin query($media) {
+  @media screen and #{$media} {
+    @content;
+  }
+}
+

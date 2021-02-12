@@ -159,7 +159,7 @@
     transition: transform .2s;
   }
 
-  @media screen and (max-width: 600px) {
+  @include query($s) {
     .puzzle__list {
       gap: $puzzle-gap_sm;
       padding: 1.5 * $puzzle-gap_sm;
