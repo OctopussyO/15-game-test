@@ -1,13 +1,3 @@
-$white: #fff;
-$white-bg: #ffffff40;
-$white-bg-accent: #ffffff60;
-$dark-purple-tr: #5b496b70;
-$caution-tr: #da1c7470;
-$dark-text: #2c173b90;
-$light-text: #f5eefc;
-$caution-text: #da1c74;
-$neutral-text: #6c4e83;
-
 $border-radius: 10px;
 $puzzle-gap: 10px;
 $puzzle-gap_sm: 5px;
@@ -22,13 +12,4 @@ $transition: 0.2s linear;
 
 @mixin notice-blur {
   backdrop-filter: blur(5px);
-}
-
-// Медиазапросы
-$s: "(max-width: 600px)";
-
-@mixin query($media) {
-  @media screen and #{$media} {
-    @content;
-  }
 }

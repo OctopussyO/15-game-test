@@ -1,0 +1,8 @@
+// Размеры
+$s: "(max-width: 600px)";
+
+@mixin query($media) {
+  @media screen and #{$media} {
+    @content;
+  }
+}
