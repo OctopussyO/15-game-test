@@ -18,7 +18,7 @@
 
     data() {
       return {
-        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ''],
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0],
         holeIndex: 15,
         move: {
           up: -4,
@@ -49,7 +49,7 @@
     methods: {
       // Поиск индекса пустой клетки
       serchHole: function (arr) {
-        this.holeIndex = arr.indexOf('');
+        this.holeIndex = arr.indexOf(0);
       },
 
       // Перемешивание массива
@@ -67,17 +67,19 @@
       },
 
       // Проверка на решаемость (см. Википедию)
-      isSolvable: function (arr, holeIndex) {
+      isSolvable: function (arr, holeIndex = this.serchHole(arr)) {
         const holeRow = Math.ceil((holeIndex + 1) / 4);
         let k = 0;
 
-        for (let i = 1; i < arr.length-1; i++) {
-          for (let j = i-1; j >= 0; j--) {
-            if (arr[j] > arr[i]) {
-              k++;
-            }
+        arr.forEach((value, index) => {
+          if (value !== 0) {
+              for (let i = index + 1; i < arr.length; i++) {
+                  if (arr[i] < value && arr[i] !== 0) {
+                      k++;
+                  }
+              }
           }
-        }
+        });
 
         return !((k + holeRow) % 2);
       },
