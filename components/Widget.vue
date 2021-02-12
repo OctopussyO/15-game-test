@@ -1,6 +1,14 @@
 <template>
   <div class="container">
-    <button class="start-button" @click="startGame">Новая игра</button>
+    <button
+      :class="[
+        'start-button',
+        (isGameStarted & !isTimeOver & !isDone) ? '' : 'start-button_accented',
+      ]"
+      @click="startGame"
+    >
+      Новая игра
+    </button>
     <Header>
       <template v-slot:steps>{{ steps }}</template>
       <template v-slot:time>{{ timeLeft }}</template>
@@ -137,6 +145,11 @@ import Notification from './Notification.vue';
     font-size: 20px;
     font-weight: 500;
     transition: $transition;
+    cursor: pointer;
+  }
+
+  .start-button_accented {
+    box-shadow: 0 0 10px $caution-tr;
   }
 
   .start-button:focus {
@@ -145,7 +158,6 @@ import Notification from './Notification.vue';
 
   .start-button:hover {
     box-shadow: 0 0 10px $dark-purple-tr;
-    cursor: pointer;
   }
 
   .start-button:active {
