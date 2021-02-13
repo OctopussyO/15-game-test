@@ -26,7 +26,7 @@
 [![HTML](https://img.shields.io/badge/-HTML-464646??style=flat-square&logo=HTML5)](https://www.w3.org/TR/html52/introduction.html#introduction)
 [![Netlify](https://img.shields.io/badge/-Netlify-464646??style=flat-square&logo=netlify)](https://https://www.netlify.com/)
 
-### Build Setup
+### Инструкция по развёртыванию и сборке проекта
 
 ```bash
 # install dependencies
@@ -43,7 +43,7 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Для более детального объянения, как это работает, смотри [документацию Nuxt.js](https://nuxtjs.org).
 
 ### Планы по доработке:
 
