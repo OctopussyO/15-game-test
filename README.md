@@ -1,6 +1,6 @@
 # Пятнашки
 
-<img align="right" height="400px" src="https://psv4.userapi.com/c505536/u1190603/docs/d36/111143bd9902/15.gif?extra=byzyYii-knGhuIVCeRmoUpGyzODMq2CZQvxLXFVhXgs0eHwdBCPToyskrIURxTBjgCz60L6lSdmOmCeftV4dmZJ5sy1od66dILsy-Nj4zupocXqdVWjjarmIANJNmmVOEDohu9dJqmIc30Y2zM8" alt="Иллюстрация к проекту">
+<img align="right" height="400px" src="https://vk.com/doc1190603_586507971?hash=d46a1d09db69e4f283&dl=abb9fdc383b1340459&wnd=1&module=im" alt="Иллюстрация к проекту">
 
 **Цель игры** — перемещая костяшки по коробке, добиться упорядочивания их по номерам, желательно сделав как можно меньше перемещений.
 
