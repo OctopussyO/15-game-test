@@ -1,6 +1,6 @@
 # Пятнашки
 
-<img align="right" height="400px" src="https://vk.com/doc1190603_586507971?hash=d46a1d09db69e4f283&dl=abb9fdc383b1340459&wnd=1&module=im" alt="Иллюстрация к проекту">
+<img align="right" height="400px" src="https://raw.githubusercontent.com/OctopussyO/15-game-test/master/static/15.gif" alt="Иллюстрация к проекту">
 
 **Цель игры** — перемещая костяшки по коробке, добиться упорядочивания их по номерам, желательно сделав как можно меньше перемещений.
 
